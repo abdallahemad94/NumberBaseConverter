@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "numberbaseconverter-2635c"
+  },
+  "targets": {
+    "numberbaseconverter-2635c": {
+      "hosting": {
+        "number-base-converter": [
+          "numberbaseconverter-2635c"
+        ]
+      }
+    }
+  }
+}

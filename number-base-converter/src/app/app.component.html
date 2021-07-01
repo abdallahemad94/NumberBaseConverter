@@ -1,0 +1,70 @@
+<header class="container mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="text-capitalize">Numbers Base converter</h2>
+            <span class="text-black-50">Convert numbers and fractions from and to any base between 2 and 36.</span>
+            <p class="text-black-50">Fractions may be approximated.</p>
+        </div>
+    </div>
+</header>
+
+<section class="container">
+
+    <div class="row">
+        <div class="col-12 col-md-6 my-3">
+            <div class="input-group">
+                <label for="fromBase" class="input-group-text">From base</label>
+                <input type="number" id="fromBase" class="form-control" [(ngModel)]="fromBase" min="2" max="36"
+                    maxlength="2" oninput="(validity.valid) || (value = value < 2 ? 2 : value > 36 ? 36 : value)"
+                    (ngModelChange)="validateFromAndToBases()">
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 my-3">
+            <div class="input-group">
+                <label for="toBase" class="input-group-text">To base</label>
+                <input type="number" id="toBase" class="form-control" [(ngModel)]="toBase" min="2" max="36"
+                    maxlength="2" oninput="(validity.valid) || (value = value < 2 ? 2 : value > 36 ? 36 : value)"
+                    (ngModelChange)="validateFromAndToBases()">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label" for="number">Input</label>
+            <input class="form-control" id="number" [ngClass]="{'is-invalid': !isUserInputValid}" type="text"
+                id="number" [placeholder]="numberToConvertPlaceHolder" maxlength="50" [(ngModel)]="numberToConvert"
+                (ngModelChange)="calculateIfValid()">
+            <span class="invalid-feedback">{{numberToConvert + " is not valid"}}</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col position-relative">
+            <label class="form-label">Result:</label>
+            <input class="form-control" type="text" [ngModel]="result" disabled>
+            <button id="copy" type="button" class="btn btn-sm btn-light copy" [ngClass]="{ 'invisible': !result }"
+                (click)="copyResult()">
+                <i class="bi-clipboard"></i>
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<footer class="container fixed-bottom">
+    <div class="row">
+        <div class="col">
+            <p class="text-center m-0">Made by <a href="mailto:abdallahEmad94@hotmail.com">A.Emad</a></p>
+            <div class="text-center mb-3">
+                <a href="https://www.linkedin.com/in/abdallahemad94/" target="_blank" class="btn social linkedin">
+                    <i class="bi-linkedin"></i>
+                </a>
+                <a href="https://github.com/abdallahemad94" target="_blank" class="btn social github">
+                    <i class="bi-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

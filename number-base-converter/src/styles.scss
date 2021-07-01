@@ -1,0 +1,26 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-icons/font/bootstrap-icons";
+@import "node_modules/nouislider/dist/nouislider.min";
+
+.copy{
+    position: absolute;
+    top: 35px;
+    right: 25px;
+}
+
+.social{
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.social:focus{
+    box-shadow: none;
+}
+
+.social.linkedin{
+    color: #0A66C2;
+}
+
+.social.github{
+    color: black;
+}

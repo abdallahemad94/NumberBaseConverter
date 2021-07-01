@@ -1,0 +1,16 @@
+{
+    "hosting": [{
+            "target": "number-base-converter",
+            "public": "dist/number-base-converter",
+            "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+            ],
+            "rewrites": [{
+                "source": "**",
+                "destination": "/index.html"
+            }]
+        }
+    ]
+}
